@@ -22,7 +22,7 @@ import SectionTitle, { SectionTitleProps } from "molecules/SectionTitle/SectionT
 
 // Organisms
 import About, { AboutProps } from "organisms/About/About";
-import { ContactMeFormProps } from "organisms/ContactMeForm/ContactMeForm";
+import ContactMeForm, { ContactForm, ContactFormButtonType, ContactMeFormProps } from "organisms/ContactMeForm/ContactMeForm";
 import GroupAbilities, { GroupAbilitiesProps } from "organisms/GroupAbilities/GroupAbilities";
 import GroupBarAbilities, { GroupBarAbilitiesProps } from "organisms/GroupBarAbilities/GroupBarAbilities";
 import MenuBar, { MenuBarProps } from "organisms/MenuBar/MenuBar";
@@ -51,6 +51,8 @@ export type {
 	ContactMeFormProps,
 	GroupAbilitiesProps,
 	GroupBarAbilitiesProps,
+	ContactForm,
+	ContactFormButtonType,
 	MenuBarProps
 };
 
@@ -74,6 +76,7 @@ export {
 	ListMenuElements,
 	SectionTitle,
 	About,
+	ContactMeForm,
 	GroupAbilities,
 	GroupBarAbilities,
 	MenuBar
