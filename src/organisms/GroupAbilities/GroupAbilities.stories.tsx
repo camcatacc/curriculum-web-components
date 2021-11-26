@@ -1,17 +1,25 @@
+// Modules
 import React from "react";
+
+// Storybook Modules
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+
+// Elements
 import GroupAbilities from "organisms/GroupAbilities/GroupAbilities";
 import PageSize from "atoms/PageSize/PageSize";
-
-import { Standard as AbilityStory } from "molecules/Ability/Ability.stories";
 import type { AbilityProps } from "molecules/Ability/Ability";
 
+// Other Stories
+import { Standard as AbilityStory } from "molecules/Ability/Ability.stories";
+
+// Template
 const Template: ComponentStory<typeof GroupAbilities> = (args) => (
 	<PageSize>
 		<GroupAbilities {...args} />
 	</PageSize>
 );
 
+// Variants
 export const Standard = Template.bind({});
 
 Standard.args = {
@@ -25,6 +33,7 @@ Standard.args = {
 	]
 };
 
+// Export
 export default {
 	title: "Organisms/GroupAbilities",
 	component: GroupAbilities

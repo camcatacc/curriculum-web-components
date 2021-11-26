@@ -1,7 +1,13 @@
+// Modules
 import React, { useState } from "react";
+
+// Storybook Modules
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+
+// Elements
 import ButtonWithState from "atoms/ButtonWithState/ButtonWithState";
 
+// Template
 const Template: ComponentStory<typeof ButtonWithState> = (args) => {
 	const [loading, setLoading] = useState(false);
 
@@ -19,12 +25,14 @@ const Template: ComponentStory<typeof ButtonWithState> = (args) => {
 	);
 };
 
-export const Contained = Template.bind({});
-Contained.args = {
+// Variants
+export const Standard = Template.bind({});
+Standard.args = {
 	variant: "contained",
 	children: "Click me"
 };
 
+// Export
 export default {
 	title: "Atoms/ButtonWithState",
 	component: ButtonWithState

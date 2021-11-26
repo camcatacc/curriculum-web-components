@@ -1,16 +1,23 @@
+// Modules
 import React from "react";
+
+// Storybook Modules
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+
+// Elements
 import About from "organisms/About/About";
 import AvatarImage from "stories/assets/avatar.jpg";
 import Paragraph from "atoms/Paragraph/Paragraph";
 import PageSize from "atoms/PageSize/PageSize";
 
+// Template
 const Template: ComponentStory<typeof About> = (args) => (
 	<PageSize>
 		<About {...args} />
 	</PageSize>
 );
 
+// Variants
 export const Standard = Template.bind({});
 
 Standard.args = {
@@ -38,6 +45,7 @@ Standard.args = {
 	)
 };
 
+// Export
 export default {
 	title: "Organisms/About",
 	component: About

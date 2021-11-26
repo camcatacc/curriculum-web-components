@@ -1,14 +1,20 @@
+// Modules
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import BarAbility from "molecules/BarAbility/BarAbility";
-import { secondary } from "styles/customColors";
 
+// Storybook Modules
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+
+// Elements
+import BarAbility from "molecules/BarAbility/BarAbility";
+
+// Template
 const Template: ComponentStory<typeof BarAbility> = (args) => (
 	<div className="w-full md:w-1/2">
 		<BarAbility {...args} />
 	</div>
 );
 
+// Variants
 export const Standard = Template.bind({});
 Standard.args = {
 	name: "Next.js",
@@ -17,6 +23,7 @@ Standard.args = {
 	titleColor: "#E25487"
 };
 
+// Export
 export default {
 	title: "Molecules/BarAbility",
 	component: BarAbility

@@ -1,8 +1,16 @@
+// Modules
 import React from "react";
+
+// Storybook Modules
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+
+// Elements
 import PageSize from "atoms/PageSize/PageSize";
 
+// Template
 const Template: ComponentStory<typeof PageSize> = (args) => <PageSize {...args} />;
+
+// Variants
 export const Standard = Template.bind({});
 Standard.args = {
 	children: (
@@ -12,6 +20,7 @@ Standard.args = {
 	)
 };
 
+// Export
 export default {
 	title: "Atoms/PageSize",
 	component: PageSize

@@ -1,8 +1,16 @@
+// Modules
 import React from "react";
+
+// Storybook Modules
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+
+// Elements
 import Paragraph from "atoms/Paragraph/Paragraph";
 
+// Template
 const Template: ComponentStory<typeof Paragraph> = (args) => <Paragraph {...args} />;
+
+// Variants
 export const Body = Template.bind({});
 Body.args = {
 	children: "This is a body1 paragraph",
@@ -15,6 +23,7 @@ Body2.args = {
 	variant: "body2"
 };
 
+// Export
 export default {
 	title: "Atoms/Paragraph",
 	component: Paragraph

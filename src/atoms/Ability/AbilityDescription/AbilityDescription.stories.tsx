@@ -1,9 +1,16 @@
+// Modules
 import React from "react";
+
+// Storybook
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+
+// Elements
 import AbilityDescription from "atoms/Ability/AbilityDescription/AbilityDescription";
 
+// Template
 const Template: ComponentStory<typeof AbilityDescription> = (args) => <AbilityDescription {...args} />;
 
+// Variants
 export const Standard = Template.bind({});
 Standard.args = {
 	children: (
@@ -13,6 +20,7 @@ Standard.args = {
 	)
 };
 
+// Export
 export default {
 	title: "Atoms/AbilityDescription",
 	component: AbilityDescription
