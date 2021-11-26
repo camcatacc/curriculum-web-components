@@ -1,8 +1,8 @@
 {
 	"name": "@camcatacc/curriculum-web-components",
-	"version": "0.1.1",
+	"version": "0.1.5",
 	"private": false,
-	"dependencies": {
+	"peerDependencies": {
 		"@craco/craco": "^6.4.2",
 		"@material-ui/core": "^4.12.3",
 		"@material-ui/icons": "^4.11.2",
@@ -10,7 +10,6 @@
 		"@types/react-dom": "^17.0.0",
 		"craco": "0.0.3",
 		"framer-motion": "^5.3.0",
-		"prettier": "^2.4.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-scripts": "4.0.3",
@@ -20,12 +19,13 @@
 		"web-vitals": "^1.0.1"
 	},
 	"scripts": {
-		"start": "craco start",
-		"build": "craco build",
 		"test": "craco test",
+		"build:cleanup": "rimraf -rf dist types",
+		"release": " yarn build:rollup && npm publish && yarn build:cleanup",
 		"eject": "react-scripts eject",
 		"storybook": "start-storybook -p 6006 -s public",
-		"build-storybook": "build-storybook -s public"
+		"build-storybook": "build-storybook -s public",
+		"build:rollup": "yarn rollup -c"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -56,12 +56,26 @@
 		]
 	},
 	"devDependencies": {
-		"@storybook/addon-actions": "^6.3.12",
-		"@storybook/addon-essentials": "^6.3.12",
-		"@storybook/addon-links": "^6.3.12",
-		"@storybook/node-logger": "^6.3.12",
+		"@craco/craco": "^6.4.2",
+		"@material-ui/core": "^4.12.3",
+		"@material-ui/icons": "^4.11.2",
+		"@storybook/addon-postcss": "^2.0.0",
+		"@types/react-dom": "^17.0.0",
+		"craco": "0.0.3",
+		"framer-motion": "^5.3.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-scripts": "4.0.3",
+		"styled-components": "^5.3.3",
+		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+		"typescript": "4.3.5",
+		"web-vitals": "^1.0.1",
+		"@storybook/addon-a11y": "^6.3.7",
+		"@storybook/addon-essentials": "^6.3.7",
+		"@storybook/addon-links": "^6.3.7",
 		"@storybook/preset-create-react-app": "^3.2.0",
-		"@storybook/react": "^6.3.12",
+		"@storybook/react": "^6.3.7",
+		"@storybook/testing-react": "^0.0.22",
 		"@testing-library/jest-dom": "^5.11.4",
 		"@testing-library/react": "^11.1.0",
 		"@testing-library/user-event": "^12.1.10",
@@ -72,10 +86,30 @@
 		"autoprefixer": "^9.8.8",
 		"eslint": "7.32.0",
 		"eslint-config-next": "11.1.0",
-		"postcss": "^7.0.39"
+		"postcss": "^8.2.9",
+		"postcss-url": "^10.1.3",
+		"prettier": "^2.4.1",
+		"rollup": "^2.44.0",
+		"rollup-plugin-copy": "^3.4.0",
+		"rollup-plugin-dts": "^4.0.0",
+		"rollup-plugin-includepaths": "^0.2.4",
+		"rollup-plugin-peer-deps-external": "^2.2.4",
+		"rollup-plugin-postcss": "^4.0.0",
+		"rollup-plugin-typescript2": "^0.30.0",
+		"ttypescript": "^1.5.12",
+		"@rollup/plugin-commonjs": "^18.0.0",
+		"@rollup/plugin-image": "^2.0.6",
+		"@rollup/plugin-node-resolve": "^11.2.1",
+		"@zerollup/ts-transform-paths": "^1.7.18",
+		"rimraf": "^3.0.2"
 	},
 	"description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-	"main": "craco.config.js",
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"files": [
+		"dist"
+	],
+	"types": "dist/index.d.ts",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/camcatacc/curriculum-web-components.git"
