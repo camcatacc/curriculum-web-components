@@ -5,6 +5,7 @@ import React from "react";
 import BarAbility from "molecules/BarAbility/BarAbility";
 import { Typography } from "@material-ui/core";
 import { motion } from "framer-motion";
+
 // Auxiliary functions
 import getOnScrollMotionFromOutsideOptions from "utils/getMotionFromOutsideOptions";
 

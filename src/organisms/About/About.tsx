@@ -17,7 +17,7 @@ import * as Styled from "organisms/About/About.styled";
 export interface AboutProps {
 	name: string;
 	surname: string;
-	paragraphs: React.ReactElement;
+	paragraphs: React.ReactNode;
 	image: string;
 	animated?: boolean;
 }

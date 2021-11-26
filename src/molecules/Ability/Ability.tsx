@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 // Definitions
 export interface AbilityProps {
 	title: string;
-	description: React.ReactElement;
+	description: React.ReactNode;
 	icon: string;
 	animated?: boolean;
 	delay?: number;
