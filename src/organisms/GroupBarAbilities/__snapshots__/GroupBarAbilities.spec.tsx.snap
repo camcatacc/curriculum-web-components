@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GroupBarAbilities Renders as expected 1`] = `
+<div>
+  <div
+    class="flex-1"
+  >
+    <div
+      class="mb-5"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-h3 MuiTypography-alignCenter"
+      >
+        Coolest abilities
+      </h3>
+    </div>
+    <div
+      class="flex flex-col gap-3"
+    >
+      <div
+        class="flex flex-row justify-center"
+      >
+        <div
+          class="w-40 md:w-32 truncate"
+        >
+          <div
+            class="sc-dkPtRN kkgdvy pl-2 pr-2 pt-1 pb-1"
+          >
+            <p
+              class="MuiTypography-root sc-hKwDye dsVJSv w-full truncate MuiTypography-body2 MuiTypography-alignCenter"
+              font-size="1rem"
+              fontcolor="white"
+            >
+              Cool
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-full md:w-80 "
+        >
+          <div
+            class="bg-gray-300 h-full"
+          >
+            <div
+              class="sc-bdvvtL iKfuUE pr-4 h-full flex flex-col justify-center"
+            >
+              <div>
+                <p
+                  class="MuiTypography-root sc-gsDKAQ etFjmY MuiTypography-body1 MuiTypography-alignRight"
+                  font-size="1rem"
+                  fontcolor="white"
+                >
+                  80%
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-row justify-center"
+      >
+        <div
+          class="w-40 md:w-32 truncate"
+        >
+          <div
+            class="sc-dkPtRN kkgdvy pl-2 pr-2 pt-1 pb-1"
+          >
+            <p
+              class="MuiTypography-root sc-hKwDye dsVJSv w-full truncate MuiTypography-body2 MuiTypography-alignCenter"
+              font-size="1rem"
+              fontcolor="white"
+            >
+              Cool 2
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-full md:w-80 "
+        >
+          <div
+            class="bg-gray-300 h-full"
+          >
+            <div
+              class="sc-bdvvtL iKfuUE pr-4 h-full flex flex-col justify-center"
+            >
+              <div>
+                <p
+                  class="MuiTypography-root sc-gsDKAQ etFjmY MuiTypography-body1 MuiTypography-alignRight"
+                  font-size="1rem"
+                  fontcolor="white"
+                >
+                  80%
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

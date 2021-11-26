@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuElement Renders as expected 1`] = `
+<div>
+  <p
+    class="MuiTypography-root MuiTypography-body2"
+  >
+    <a
+      class="MuiTypography-root MuiLink-root MuiLink-underlineHover sc-bdvvtL nvKmn cursor-pointer font-regular uppercase MuiTypography-colorTextSecondary"
+    >
+      Home
+    </a>
+  </p>
+</div>
+`;
