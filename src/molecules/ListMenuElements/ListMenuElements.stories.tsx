@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ListMenuElements from "molecules/ListMenuElements/ListMenuElements";
 
-const Template: ComponentStory<typeof ListMenuElements> = (args) => {
-	return <ListMenuElements {...args} />;
-};
+const Template: ComponentStory<typeof ListMenuElements> = (args) => <ListMenuElements {...args} />;
+
 export const Standard = Template.bind({});
+
 Standard.args = {
 	menuElements: [
 		{ id: "home", name: "Home", color: "black" },
