@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import AvatarName from "atoms/AvatarName/AvatarName";
@@ -8,7 +8,7 @@ import AvatarName from "atoms/AvatarName/AvatarName";
 // Tests
 describe("AvatarName", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<AvatarName name="Marco" surname="Polo" />);
+		const { container } = customRender(<AvatarName name="Marco" surname="Polo" />);
 		expect(container).toMatchSnapshot();
 	});
 });

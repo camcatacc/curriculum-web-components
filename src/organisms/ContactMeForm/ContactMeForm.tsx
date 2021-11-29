@@ -47,11 +47,19 @@ const ContactMeForm = ({ openModal, handleModalClose, form, onFormChange, onButt
 				I will be glad to help ;)
 			</DialogContentText>
 			<div className="flex flex-col gap-3 mt-6">
-				<TextField onChange={(ev) => onFormChange("name", ev.target.value)} value={form.name} variant="outlined" label="Name" />
-				<TextField onChange={(ev) => onFormChange("surname", ev.target.value)} value={form.surname} variant="outlined" label="Surname" />
-				<TextField onChange={(ev) => onFormChange("email", ev.target.value)} value={form.email} variant="outlined" label="Email" />
-				<TextField onChange={(ev) => onFormChange("messageSubject", ev.target.value)} value={form.messageSubject} variant="outlined" label="Message Subject" />
-				<TextField onChange={(ev) => onFormChange("messageBody", ev.target.value)} value={form.messageBody} variant="outlined" rows={5} multiline label="Message Body" />
+				<TextField id="name" onChange={(ev) => onFormChange("name", ev.target.value)} value={form.name} variant="outlined" label="Name" />
+				<TextField id="surname" onChange={(ev) => onFormChange("surname", ev.target.value)} value={form.surname} variant="outlined" label="Surname" />
+				<TextField id="email" onChange={(ev) => onFormChange("email", ev.target.value)} value={form.email} variant="outlined" label="Email" />
+				<TextField id="messageSubject" onChange={(ev) => onFormChange("messageSubject", ev.target.value)} value={form.messageSubject} variant="outlined" label="Message Subject" />
+				<TextField
+					id="messageBody"
+					onChange={(ev) => onFormChange("messageBody", ev.target.value)}
+					value={form.messageBody}
+					variant="outlined"
+					rows={5}
+					multiline
+					label="Message Body"
+				/>
 			</div>
 		</DialogContent>
 		<DialogActions>

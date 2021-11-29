@@ -2,13 +2,14 @@
 import React from "react";
 
 // Testing Modules
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import MenuBar from "organisms/MenuBar/MenuBar";
 
 // Definitions
 import type { MenuBarProps } from "organisms/MenuBar/MenuBar";
+import { fireEvent } from "@testing-library/dom";
 
 // Default Props
 const defaultProps: MenuBarProps = {
@@ -36,7 +37,17 @@ describe("MenuBar", () => {
 		});
 	});
 	it("Renders as expected if width > 720", () => {
-		const { container } = render(<MenuBar {...defaultProps} />);
+		const { container } = customRender(<MenuBar {...defaultProps} />);
 		expect(container).toMatchSnapshot();
+	});
+	it("Renders as expected with dark mode", () => {
+		const { container } = customRender(<MenuBar {...defaultProps} />, { darkMode: true });
+		expect(container).toMatchSnapshot();
+	});
+	it("Calls onSwitchChange function when switch is clicked", () => {
+		const { getByRole } = customRender(<MenuBar {...defaultProps} />);
+		const switchInput = getByRole("checkbox");
+		fireEvent.click(switchInput);
+		expect(defaultProps.onSwitchChange).toHaveBeenCalled();
 	});
 });

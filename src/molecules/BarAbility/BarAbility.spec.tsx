@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import BarAbility from "molecules/BarAbility/BarAbility";
@@ -19,7 +19,7 @@ const defaultProps: BarAbilityProps = {
 // Tests
 describe("BarAbility", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<BarAbility {...defaultProps} />);
+		const { container } = customRender(<BarAbility {...defaultProps} />);
 		expect(container).toMatchSnapshot();
 	});
 });

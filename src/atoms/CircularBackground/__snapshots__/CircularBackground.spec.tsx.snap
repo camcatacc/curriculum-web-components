@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CircularBackground Snapshot 1`] = `
+<div>
+  <div
+    class="sc-bdvvtL fQxqua rounded-full relative flex"
+    data-testid="container"
+  >
+    <div
+      class="h-full flex justify-center items-center"
+    >
+      <p>
+        Circular Background
+      </p>
+    </div>
+    <div
+      style="margin-top: 100%;"
+    />
+  </div>
+</div>
+`;

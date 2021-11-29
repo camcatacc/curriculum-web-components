@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import Paragraph from "atoms/Paragraph/Paragraph";
@@ -16,7 +16,7 @@ const defaultProps: ParagraphProps = {
 // Tests
 describe("Paragraph", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<Paragraph {...defaultProps} />);
+		const { container } = customRender(<Paragraph {...defaultProps} />);
 		expect(container).toMatchSnapshot();
 	});
 });

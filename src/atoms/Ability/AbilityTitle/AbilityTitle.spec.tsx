@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import AbilityTitle from "atoms/Ability/AbilityTitle/AbilityTitle";
@@ -8,7 +8,7 @@ import AbilityTitle from "atoms/Ability/AbilityTitle/AbilityTitle";
 // Tests
 describe("AbilityTitle", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<AbilityTitle>Hello, hello</AbilityTitle>);
+		const { container } = customRender(<AbilityTitle>Hello, hello</AbilityTitle>);
 		expect(container).toMatchSnapshot();
 	});
 });

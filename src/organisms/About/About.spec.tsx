@@ -1,9 +1,12 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import About from "organisms/About/About";
+
+// Images
+import Avatar from "assets/avatar.jpg";
 
 // Definitions
 import type { AboutProps } from "organisms/About/About";
@@ -12,13 +15,19 @@ import type { AboutProps } from "organisms/About/About";
 const defaultProps: AboutProps = {
 	name: "David",
 	surname: "Camacho Cateura",
-	paragraphs: <p>These are example paragraphs</p>
+	paragraphs: <p>These are example paragraphs</p>,
+	image: Avatar
 };
 
 // Tests
 describe("About", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<About {...defaultProps} />);
+		const { container } = customRender(<About {...defaultProps} />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renders as expected when animated", () => {
+		const { container } = customRender(<About {...defaultProps} animated={true} />);
 		expect(container).toMatchSnapshot();
 	});
 });

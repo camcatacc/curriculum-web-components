@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import GroupAbilities from "organisms/GroupAbilities/GroupAbilities";
@@ -30,7 +30,11 @@ const defaultProps: GroupAbilitiesProps = {
 // Tests
 describe("GroupAbilities", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<GroupAbilities {...defaultProps} />);
+		const { container } = customRender(<GroupAbilities {...defaultProps} />);
+		expect(container).toMatchSnapshot();
+	});
+	it("Renders as expected with motion", () => {
+		const { container } = customRender(<GroupAbilities {...defaultProps} animated={true} />);
 		expect(container).toMatchSnapshot();
 	});
 });

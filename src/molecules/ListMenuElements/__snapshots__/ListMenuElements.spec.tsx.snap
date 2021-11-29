@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ListMenuElements Renders as expected 1`] = `
+exports[`ListMenuElements Renders as expected in desktop 1`] = `
 <div>
   <div
     class="undefined flex-row flex gap-28"
@@ -18,3 +18,5 @@ exports[`ListMenuElements Renders as expected 1`] = `
   </div>
 </div>
 `;
+
+exports[`ListMenuElements Renders as expected in mobile 1`] = `<div />`;

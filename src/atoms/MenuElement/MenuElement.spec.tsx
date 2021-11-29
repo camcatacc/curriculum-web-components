@@ -1,6 +1,7 @@
 // Modules
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 import "@testing-library/jest-dom/extend-expect";
 
 // Elements
@@ -23,7 +24,7 @@ const defaultProps: MenuElementProps = {
 // Rendering
 const renderComponent = (props = {}) => {
 	const combinedProps = { ...defaultProps, ...props };
-	return render(<MenuElement {...combinedProps} />);
+	return customRender(<MenuElement {...combinedProps} />);
 };
 
 // Tests

@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import AvatarWithName from "molecules/AvatarWithName/AvatarWithName";
@@ -17,7 +17,7 @@ const defaultProps: AvatarWithNameProps = {
 // Tests
 describe("AvatarWithName", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<AvatarWithName {...defaultProps} />);
+		const { container } = customRender(<AvatarWithName {...defaultProps} />);
 		expect(container).toMatchSnapshot();
 	});
 });

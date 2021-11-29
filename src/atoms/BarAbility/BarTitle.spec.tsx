@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import BarTitle from "atoms/BarAbility/BarTitle";
@@ -18,7 +18,7 @@ const defaultProps: BarTitleProps = {
 // Tests
 describe("BarTitle", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<BarTitle {...defaultProps}>Hello, hello</BarTitle>);
+		const { container } = customRender(<BarTitle {...defaultProps}>Hello, hello</BarTitle>);
 		expect(container).toMatchSnapshot();
 	});
 });

@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import SectionTitleText from "atoms/SectionTitleText/SectionTitleText";
@@ -16,7 +16,11 @@ const defaultProps: SectionTitleTextProps = {
 // Tests
 describe("SectionTitleText", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<SectionTitleText {...defaultProps} />);
+		const { container } = customRender(<SectionTitleText {...defaultProps} />);
+		expect(container).toMatchSnapshot();
+	});
+	it("Renders as expected with animation", () => {
+		const { container } = customRender(<SectionTitleText {...defaultProps} animated={true} />);
 		expect(container).toMatchSnapshot();
 	});
 });

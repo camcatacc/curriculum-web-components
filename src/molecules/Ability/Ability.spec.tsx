@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import Ability from "molecules/Ability/Ability";
@@ -22,7 +22,7 @@ const defaultProps: AbilityProps = {
 // Tests
 describe("Ability", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<Ability {...defaultProps} />);
+		const { container } = customRender(<Ability {...defaultProps} />);
 		expect(container).toMatchSnapshot();
 	});
 });

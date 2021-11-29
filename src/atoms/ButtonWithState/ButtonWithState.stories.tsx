@@ -9,7 +9,7 @@ import ButtonWithState from "atoms/ButtonWithState/ButtonWithState";
 
 // Template
 const Template: ComponentStory<typeof ButtonWithState> = (args) => {
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(args.loading ?? false);
 
 	function onClick() {
 		setLoading(true);

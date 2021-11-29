@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import GroupBarAbilities from "organisms/GroupBarAbilities/GroupBarAbilities";
@@ -22,7 +22,7 @@ const defaultProps: GroupBarAbilitiesProps = {
 // Tests
 describe("GroupBarAbilities", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<GroupBarAbilities {...defaultProps} />);
+		const { container } = customRender(<GroupBarAbilities {...defaultProps} />);
 		expect(container).toMatchSnapshot();
 	});
 });

@@ -7,3 +7,21 @@ exports[`SectionTitleDivider Renders as expected 1`] = `
   />
 </div>
 `;
+
+exports[`SectionTitleDivider Renders as expected with animation 1`] = `
+<div>
+  <div
+    class="self-center border-b-2 border-black border-solid w-20 mt-4 mb-4"
+    style="opacity: 0; transform: translateX(-50px) translateY(0px) translateZ(0);"
+  />
+</div>
+`;
+
+exports[`SectionTitleDivider Renders white if dark mode is activated 1`] = `
+<div>
+  <div
+    class="self-center border-b-2 border-white border-solid w-20 mt-4 mb-4"
+    style="opacity: 0; transform: translateX(-50px) translateY(0px) translateZ(0);"
+  />
+</div>
+`;

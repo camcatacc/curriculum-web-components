@@ -14,10 +14,11 @@ exports[`About Renders as expected 1`] = `
         <img
           alt="DavidCamacho Cateura"
           class="absolute top-0 left-0 bottom-0 right-0 rounded-full"
+          src="avatar.jpg"
         />
       </div>
       <h3
-        class="MuiTypography-root sc-bdvvtL iytgcZ MuiTypography-h3 MuiTypography-alignCenter"
+        class="MuiTypography-root sc-bdvvtL gjaeEB MuiTypography-h3 MuiTypography-alignCenter"
       >
         David
          
@@ -26,6 +27,44 @@ exports[`About Renders as expected 1`] = `
     </div>
     <div
       class="sc-eCImPb fwVAJe mt-4 md:mt-0 flex gap-8 flex-col justify-center"
+    >
+      <p>
+        These are example paragraphs
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`About Renders as expected when animated 1`] = `
+<div>
+  <div
+    class="sc-dkPtRN rZzya flex flex-col md:flex-row items-center"
+  >
+    <div
+      class="sc-hKwDye ffeJpd w-3/5 md:w-auto"
+      style="opacity: 0; transform: rotateY(90deg) translateZ(0);"
+    >
+      <div
+        class="sc-gsDKAQ mtNEY w-full relative mb-4"
+      >
+        <img
+          alt="DavidCamacho Cateura"
+          class="absolute top-0 left-0 bottom-0 right-0 rounded-full"
+          src="avatar.jpg"
+        />
+      </div>
+      <h3
+        class="MuiTypography-root sc-bdvvtL gjaeEB MuiTypography-h3 MuiTypography-alignCenter"
+      >
+        David
+         
+        Camacho Cateura
+      </h3>
+    </div>
+    <div
+      class="sc-eCImPb fwVAJe mt-4 md:mt-0 flex gap-8 flex-col justify-center"
+      style="opacity: 0; transform: translateX(50px) translateY(0px) translateZ(0);"
     >
       <p>
         These are example paragraphs

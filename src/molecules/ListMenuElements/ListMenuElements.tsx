@@ -34,6 +34,8 @@ const ListMenuElements = ({ menuElements, selectedId, className }: ListMenuEleme
 	useEffect(() => {
 		const media = window.matchMedia(`(max-width: 720px)`);
 		setIsMobile(media.matches);
+
+		/* istanbul ignore next */
 		const listener = (e: MediaQueryListEvent) => isMobile !== e.matches && setIsMobile(e.matches);
 		media.addEventListener("change", listener);
 

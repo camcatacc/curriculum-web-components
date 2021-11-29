@@ -1,16 +1,11 @@
 // Modules
 import styled from "styled-components";
 
-// Definition
-export interface CircularBackgroundContainerProps {
-	backgroundColor: string;
-	height?: string | number;
-	width?: string | number;
-	padding?: string | number;
-}
+// Definitions
+import type { CircularBackgroundProps } from "atoms/CircularBackground/CircularBackground";
 
 // Components
-export const Container = styled.div<CircularBackgroundContainerProps>`
+export const Container = styled.div<Omit<CircularBackgroundProps, "children">>`
 	background-color: ${({ backgroundColor }) => backgroundColor};
 	height: ${({ height }) => height};
 	width: ${({ width }) => width};

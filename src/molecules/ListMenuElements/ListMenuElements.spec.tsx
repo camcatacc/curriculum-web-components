@@ -1,6 +1,7 @@
 // Modules
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import ListMenuElements from "molecules/ListMenuElements/ListMenuElements";
@@ -19,7 +20,7 @@ const defaultProps: ListMenuElementsProps = {
 
 // Tests
 describe("ListMenuElements", () => {
-	beforeAll(() => {
+	beforeEach(() => {
 		window.matchMedia = (query) => ({
 			matches: false,
 			media: query,
@@ -32,12 +33,28 @@ describe("ListMenuElements", () => {
 		});
 	});
 
-	it("Renders as expected", () => {
-		const { container } = render(<ListMenuElements {...defaultProps} />);
+	it("Renders as expected in desktop", () => {
+		const { container } = customRender(<ListMenuElements {...defaultProps} />);
 		expect(container).toMatchSnapshot();
 	});
+
+	it("Renders as expected in mobile", () => {
+		window.matchMedia = (query) => ({
+			matches: true,
+			media: query,
+			onchange: null,
+			addListener: jest.fn(), // Deprecated
+			removeListener: jest.fn(), // Deprecated
+			addEventListener: jest.fn(),
+			removeEventListener: jest.fn(),
+			dispatchEvent: jest.fn()
+		});
+		const { container } = customRender(<ListMenuElements {...defaultProps} />);
+		expect(container).toMatchSnapshot();
+	});
+
 	it("Calls onClick function", () => {
-		const { getByText } = render(<ListMenuElements {...defaultProps} />);
+		const { getByText } = customRender(<ListMenuElements {...defaultProps} />);
 		const home = getByText("Home");
 		fireEvent.click(home);
 

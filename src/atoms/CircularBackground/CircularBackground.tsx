@@ -7,7 +7,7 @@ import * as Styled from "atoms/CircularBackground/CircularBackground.styled";
 // Definitions
 export interface CircularBackgroundProps {
 	children: React.ReactNode;
-	backgroundColor: string;
+	backgroundColor?: string;
 	height?: string | number;
 	width?: string | number;
 	padding?: string | number;
@@ -16,7 +16,7 @@ export interface CircularBackgroundProps {
 // Element
 const CircularBackground = ({ children, backgroundColor, height, width, padding }: CircularBackgroundProps) => {
 	return (
-		<Styled.Container className="rounded-full relative flex" backgroundColor={backgroundColor} height={height} width={width} padding={padding}>
+		<Styled.Container data-testid="container" className="rounded-full relative flex" backgroundColor={backgroundColor} height={height} width={width} padding={padding}>
 			<div className="h-full flex justify-center items-center">{children}</div>
 			{/** This is a dummy so that the height is the same than the width */}
 			<div style={{ marginTop: "100%" }} />

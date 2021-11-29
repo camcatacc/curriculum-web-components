@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import PageSize from "atoms/PageSize/PageSize";
@@ -16,7 +16,7 @@ const defaultProps: PageSizeProps = {
 // Tests
 describe("PageSize", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<PageSize {...defaultProps} />);
+		const { container } = customRender(<PageSize {...defaultProps} />);
 		expect(container).toMatchSnapshot();
 	});
 });

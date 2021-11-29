@@ -1,6 +1,6 @@
 // Modules
 import React from "react";
-import { render } from "@testing-library/react";
+import { customRender } from "utils/customRender";
 
 // Elements
 import SectionTitle from "molecules/SectionTitle/SectionTitle";
@@ -16,7 +16,7 @@ const defaultProps: SectionTitleProps = {
 // Tests
 describe("SectionTitle", () => {
 	it("Renders as expected", () => {
-		const { container } = render(<SectionTitle {...defaultProps} />);
+		const { container } = customRender(<SectionTitle {...defaultProps} />);
 		expect(container).toMatchSnapshot();
 	});
 });

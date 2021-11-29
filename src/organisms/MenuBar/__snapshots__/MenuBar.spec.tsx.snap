@@ -59,3 +59,63 @@ exports[`MenuBar Renders as expected if width > 720 1`] = `
   </div>
 </div>
 `;
+
+exports[`MenuBar Renders as expected with dark mode 1`] = `
+<div>
+  <div
+    class="sc-gsDKAQ jWzHub w-full sticky top-0 flex justify-center pt-2 pb-2 z-50"
+  >
+    <div
+      class="w-4/5 max-w-screen-lg items-center flex-row flex gap-28"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body2"
+      >
+        <a
+          class="MuiTypography-root MuiLink-root MuiLink-underlineHover sc-bdvvtL gMljHF cursor-pointer font-semibold uppercase MuiTypography-colorTextSecondary"
+          href="#"
+        >
+          Home
+        </a>
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body2"
+      >
+        <a
+          class="MuiTypography-root MuiLink-root MuiLink-underlineHover sc-bdvvtL clPpEY cursor-pointer font-regular uppercase MuiTypography-colorTextSecondary"
+          href="#"
+        >
+          About
+        </a>
+      </p>
+    </div>
+    <span
+      class="MuiSwitch-root WithStyles(ForwardRef(Switch))-root-7 WithStyles(ForwardRef(Switch))-root-8"
+    >
+      <span
+        aria-disabled="false"
+        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-9 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <input
+            class="PrivateSwitchBase-input-12 MuiSwitch-input"
+            type="checkbox"
+            value="nightMode"
+          />
+          <span
+            class="MuiSwitch-thumb"
+          />
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </span>
+      <span
+        class="MuiSwitch-track"
+      />
+    </span>
+  </div>
+</div>
+`;

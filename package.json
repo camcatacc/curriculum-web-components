@@ -19,7 +19,9 @@
 		"web-vitals": "^1.0.1"
 	},
 	"scripts": {
-		"test": "craco test",
+		"test": "react-scripts test --no-watch --watch=false --watchAll=false --no-watchman --runInBand",
+		"test:coverage": "yarn test --coverage && coverage/lcov-report/index.html",
+		"test:open-coverage": "coverage/lcov-report/index.html",
 		"build:cleanup": "rimraf -rf dist types",
 		"release": " yarn build:rollup && npm publish && yarn build:cleanup",
 		"eject": "react-scripts eject",
@@ -102,6 +104,33 @@
 		"@rollup/plugin-node-resolve": "^11.2.1",
 		"@zerollup/ts-transform-paths": "^1.7.18",
 		"rimraf": "^3.0.2"
+	},
+	"jest": {
+		"collectCoverageFrom": [
+			"src/atoms/**/*.{js,jsx,ts,tsx}",
+			"src/molecules/**/*.{js,jsx,ts,tsx}",
+			"src/organisms/**/*.{js,jsx,ts,tsx}",
+			"src/utils/**/*.{js,jsx,ts,tsx}",
+			"!src/**/*.stories.{js,jsx,ts,tsx}",
+			"!src/**/*.stories.tsx",
+			"!**/*.d.ts",
+			"!src/utils/createEmotionCache.ts",
+			"!src/utils/hooks/useOnScreen/**.tsx"
+		],
+		"coverageThreshold": {
+			"global": {
+				"branches": 100,
+				"functions": 100,
+				"lines": 100,
+				"statements": 100
+			}
+		},
+		"moduleNameMapper": {
+			"\\.(css|scss)$": "identity-obj-proxy"
+		},
+		"transformIgnorePatterns": [
+			"/node_modules/(?!@storybook)"
+		]
 	},
 	"description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
 	"main": "dist/index.js",
