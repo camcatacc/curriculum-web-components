@@ -16,17 +16,24 @@ export interface MenuElementProps {
 }
 
 // Element
-const MenuElement = ({ selected, onClicked, title, color }: MenuElementProps) => (
-	<Typography variant="body2">
-		<Styled.Link
-			color="textSecondary"
-			$selected={selected}
-			$color={color}
-			className={`cursor-pointer ${selected ? "font-semibold" : "font-regular"} uppercase`}
-			onClick={onClicked}
-		>
-			{title}
-		</Styled.Link>
-	</Typography>
-);
+const MenuElement = ({ selected, onClicked, title, color }: MenuElementProps) => {
+	const onClick: React.MouseEventHandler<HTMLAnchorElement> & React.MouseEventHandler<HTMLSpanElement> = (e) => {
+		e.preventDefault();
+		onClicked && onClicked();
+	};
+	return (
+		<Typography variant="body2">
+			<Styled.Link
+				color="textSecondary"
+				$selected={selected}
+				$color={color}
+				className={`cursor-pointer ${selected ? "font-semibold" : "font-regular"} uppercase`}
+				onClick={onClick}
+				href="#"
+			>
+				{title}
+			</Styled.Link>
+		</Typography>
+	);
+};
 export default MenuElement;

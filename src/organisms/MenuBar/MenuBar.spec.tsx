@@ -1,8 +1,8 @@
 // Modules
 import React from "react";
 
-// Testing modules
-import { customRender } from "utils/tests";
+// Testing Modules
+import { render } from "@testing-library/react";
 
 // Elements
 import MenuBar from "organisms/MenuBar/MenuBar";
@@ -16,28 +16,27 @@ const defaultProps: MenuBarProps = {
 		{ name: "Home", onClick: jest.fn(), id: "home" },
 		{ name: "About", onClick: jest.fn(), id: "about" }
 	],
-	selectedId: "home"
+	selectedId: "home",
+	onSwitchChange: jest.fn(),
+	darkModeChecked: false
 };
 
 // Tests
 describe("MenuBar", () => {
 	beforeAll(() => {
-		Object.defineProperty(window, "matchMedia", {
-			writable: true,
-			value: jest.fn().mockImplementation((query) => ({
-				matches: false,
-				media: query,
-				onchange: null,
-				addListener: jest.fn(), // Deprecated
-				removeListener: jest.fn(), // Deprecated
-				addEventListener: jest.fn(),
-				removeEventListener: jest.fn(),
-				dispatchEvent: jest.fn()
-			}))
+		window.matchMedia = (query) => ({
+			matches: false,
+			media: query,
+			onchange: null,
+			addListener: jest.fn(), // Deprecated
+			removeListener: jest.fn(), // Deprecated
+			addEventListener: jest.fn(),
+			removeEventListener: jest.fn(),
+			dispatchEvent: jest.fn()
 		});
 	});
 	it("Renders as expected if width > 720", () => {
-		const { container } = customRender(<MenuBar {...defaultProps} />);
+		const { container } = render(<MenuBar {...defaultProps} />);
 		expect(container).toMatchSnapshot();
 	});
 });

@@ -6,7 +6,8 @@ exports[`MenuElement Renders as expected 1`] = `
     class="MuiTypography-root MuiTypography-body2"
   >
     <a
-      class="MuiTypography-root MuiLink-root MuiLink-underlineHover sc-bdvvtL nvKmn cursor-pointer font-regular uppercase MuiTypography-colorTextSecondary"
+      class="MuiTypography-root MuiLink-root MuiLink-underlineHover sc-bdvvtL clPpEY cursor-pointer font-regular uppercase MuiTypography-colorTextSecondary"
+      href="#"
     >
       Home
     </a>

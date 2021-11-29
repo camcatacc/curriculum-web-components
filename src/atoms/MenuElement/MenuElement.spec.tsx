@@ -1,6 +1,7 @@
 // Modules
 import React from "react";
 import { fireEvent, render } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 
 // Elements
 import MenuElement from "atoms/MenuElement/MenuElement";
@@ -15,7 +16,8 @@ import type { MenuElementProps } from "atoms/MenuElement/MenuElement";
 const defaultProps: MenuElementProps = {
 	onClicked: jest.fn(),
 	selected: false,
-	title: "Home"
+	title: "Home",
+	color: "white"
 };
 
 // Rendering
@@ -34,7 +36,7 @@ describe("MenuElement", () => {
 	it("If selected is not true, the color is white", () => {
 		const { getByRole } = renderComponent({ selected: false });
 		const link = getByRole("link");
-		expect(link).toHaveStyle("color: rgb(255,255,255)");
+		expect(link).toHaveStyle("color: rgba(0, 0, 0, 0.54)");
 	});
 
 	it("If selected is true, the color is primary", () => {
