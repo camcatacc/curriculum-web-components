@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GroupAbilities Renders as expected 1`] = `
+exports[`GroupAbilities Renders as expected and has no accessibility violations 1`] = `
 <div>
   <div
     class="grid md:gap-x-12 gap-y-10 grid-cols-2 md:grid-cols-3 gap-x-4"

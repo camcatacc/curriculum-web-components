@@ -25,7 +25,7 @@ const MenuBar = ({ elements, selectedId, onSwitchChange, darkModeChecked }: Menu
 	return (
 		<Styled.Container ref={ref} secondary={secondary} className="w-full sticky top-0 flex justify-center pt-2 pb-2 z-50">
 			<ListMenuElements menuElements={elements} selectedId={selectedId} className="w-4/5 max-w-screen-lg items-center" />
-			<Styled.MaterialUISwitch checked={darkModeChecked} onChange={onChange} value="nightMode" />
+			<Styled.MaterialUISwitch checked={darkModeChecked} onChange={onChange} value="nightMode" inputProps={{ "aria-label": "Night Mode switch" }} />
 		</Styled.Container>
 	);
 };

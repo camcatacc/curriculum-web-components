@@ -3,13 +3,16 @@ import React from "react";
 
 // Testing Modules
 import { customRender } from "utils/customRender";
+import { fireEvent } from "@testing-library/dom";
+
+// Accessibility
+import { axe, toHaveNoViolations } from "jest-axe";
 
 // Elements
 import MenuBar from "organisms/MenuBar/MenuBar";
 
 // Definitions
 import type { MenuBarProps } from "organisms/MenuBar/MenuBar";
-import { fireEvent } from "@testing-library/dom";
 
 // Default Props
 const defaultProps: MenuBarProps = {
@@ -23,6 +26,7 @@ const defaultProps: MenuBarProps = {
 };
 
 // Tests
+expect.extend(toHaveNoViolations);
 describe("MenuBar", () => {
 	beforeAll(() => {
 		window.matchMedia = (query) => ({
@@ -36,13 +40,15 @@ describe("MenuBar", () => {
 			dispatchEvent: jest.fn()
 		});
 	});
-	it("Renders as expected if width > 720", () => {
+	it("Renders as expected if width > 720", async () => {
 		const { container } = customRender(<MenuBar {...defaultProps} />);
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
-	it("Renders as expected with dark mode", () => {
+	it("Renders as expected with dark mode", async () => {
 		const { container } = customRender(<MenuBar {...defaultProps} />, { darkMode: true });
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 	it("Calls onSwitchChange function when switch is clicked", () => {
 		const { getByRole } = customRender(<MenuBar {...defaultProps} />);

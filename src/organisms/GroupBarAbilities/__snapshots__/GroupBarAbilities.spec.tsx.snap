@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GroupBarAbilities Renders as expected 1`] = `
+exports[`GroupBarAbilities Renders as expected and has no accessibility violations 1`] = `
 <div>
   <div
     class="flex-1"
@@ -42,7 +42,7 @@ exports[`GroupBarAbilities Renders as expected 1`] = `
             class="bg-gray-300 h-full"
           >
             <div
-              class="sc-bdvvtL iKfuUE pr-4 h-full flex flex-col justify-center"
+              class="sc-bdvvtL jyfIox pr-4 h-full flex flex-col justify-center"
             >
               <div>
                 <p
@@ -82,7 +82,7 @@ exports[`GroupBarAbilities Renders as expected 1`] = `
             class="bg-gray-300 h-full"
           >
             <div
-              class="sc-bdvvtL iKfuUE pr-4 h-full flex flex-col justify-center"
+              class="sc-bdvvtL jyfIox pr-4 h-full flex flex-col justify-center"
             >
               <div>
                 <p

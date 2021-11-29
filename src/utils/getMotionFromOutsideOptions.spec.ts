@@ -1,5 +1,7 @@
+// Modules
 import getOnScrollMotionFromOutsideOptions, { getMotionFromOutsideVariants } from "utils/getMotionFromOutsideOptions";
 
+// Tests
 describe("getOnScrollMotionFromOutsideOptions", () => {
 	it("Returns the correct value", () => {
 		const options = getOnScrollMotionFromOutsideOptions(true, "fromBottom", 100);

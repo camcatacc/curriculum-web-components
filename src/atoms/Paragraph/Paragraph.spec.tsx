@@ -2,6 +2,9 @@
 import React from "react";
 import { customRender } from "utils/customRender";
 
+// Accessibility
+import { axe, toHaveNoViolations } from "jest-axe";
+
 // Elements
 import Paragraph from "atoms/Paragraph/Paragraph";
 
@@ -14,9 +17,11 @@ const defaultProps: ParagraphProps = {
 };
 
 // Tests
+expect.extend(toHaveNoViolations);
 describe("Paragraph", () => {
-	it("Renders as expected", () => {
+	it("Renders as expected and has no accessibility violations", async () => {
 		const { container } = customRender(<Paragraph {...defaultProps} />);
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 });

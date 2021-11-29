@@ -4,6 +4,9 @@ import { fireEvent } from "@testing-library/react";
 import { customRender } from "utils/customRender";
 import "@testing-library/jest-dom/extend-expect";
 
+// Accessibility
+import { axe, toHaveNoViolations } from "jest-axe";
+
 // Elements
 import MenuElement from "atoms/MenuElement/MenuElement";
 
@@ -28,10 +31,12 @@ const renderComponent = (props = {}) => {
 };
 
 // Tests
+expect.extend(toHaveNoViolations);
 describe("MenuElement", () => {
-	it("Renders as expected", () => {
+	it("Renders as expected and has no accessibility violations", async () => {
 		const { container } = renderComponent();
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 
 	it("If selected is not true, the color is white", () => {

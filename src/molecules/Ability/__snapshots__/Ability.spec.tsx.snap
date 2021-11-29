@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Ability Renders as expected 1`] = `
+exports[`Ability Renders as expected and has no accessibility violations 1`] = `
 <div>
   <div
     class="w-full h-full flex-col flex items-center"

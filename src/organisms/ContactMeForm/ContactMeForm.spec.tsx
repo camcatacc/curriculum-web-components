@@ -3,6 +3,9 @@ import React from "react";
 import { fireEvent } from "@testing-library/react";
 import { customRender } from "utils/customRender";
 
+// Accessibility
+import { axe, toHaveNoViolations } from "jest-axe";
+
 // Elements
 import ContactMeForm from "organisms/ContactMeForm/ContactMeForm";
 
@@ -25,10 +28,12 @@ const defaultProps: ContactMeFormProps = {
 };
 
 // Tests
+expect.extend(toHaveNoViolations);
 describe("ContactMeForm", () => {
-	it("Renders as expected", () => {
+	it("Renders as expected and has no accessibility violations", async () => {
 		const { container } = customRender(<ContactMeForm {...defaultProps} />);
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 
 	it("Calls onFormChange when name input changes", () => {

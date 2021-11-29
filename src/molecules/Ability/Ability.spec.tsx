@@ -2,6 +2,9 @@
 import React from "react";
 import { customRender } from "utils/customRender";
 
+// Accessibility
+import { axe, toHaveNoViolations } from "jest-axe";
+
 // Elements
 import Ability from "molecules/Ability/Ability";
 
@@ -20,9 +23,11 @@ const defaultProps: AbilityProps = {
 };
 
 // Tests
+expect.extend(toHaveNoViolations);
 describe("Ability", () => {
-	it("Renders as expected", () => {
+	it("Renders as expected and has no accessibility violations", async () => {
 		const { container } = customRender(<Ability {...defaultProps} />);
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 });

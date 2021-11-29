@@ -4,6 +4,9 @@ import { fireEvent } from "@testing-library/react";
 import { customRender } from "utils/customRender";
 import "@testing-library/jest-dom/extend-expect";
 
+// Accessibility
+import { axe, toHaveNoViolations } from "jest-axe";
+
 // Elements
 import CircularBackground from "atoms/CircularBackground/CircularBackground";
 
@@ -21,9 +24,10 @@ const renderComponent = (props = {}) => {
 };
 
 describe("CircularBackground", () => {
-	it("Snapshot", () => {
+	it("Snapshot", async () => {
 		const { container } = renderComponent();
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 
 	it("Renders the required props as stated", () => {
@@ -33,3 +37,4 @@ describe("CircularBackground", () => {
 	});
 });
 // Tests
+expect.extend(toHaveNoViolations);

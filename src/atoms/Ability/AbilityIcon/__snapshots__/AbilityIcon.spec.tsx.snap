@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AbilityIcon Renders as expected 1`] = `
+exports[`AbilityIcon Renders as expected and has no accessibility violations 1`] = `
 <div>
   <div
     class="sc-bdvvtL gnQPDc rounded-full relative flex"

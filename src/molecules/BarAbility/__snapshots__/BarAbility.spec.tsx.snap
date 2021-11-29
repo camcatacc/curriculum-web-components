@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BarAbility Renders as expected 1`] = `
+exports[`BarAbility Renders as expected and has no accessibility violations 1`] = `
 <div>
   <div
     class="flex flex-row justify-center"

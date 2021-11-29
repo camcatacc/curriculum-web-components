@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AbilityDescription Renders as expected 1`] = `
+exports[`AbilityDescription Renders as expected and has no accessibility violations 1`] = `
 <div>
   Hello, hello
 </div>

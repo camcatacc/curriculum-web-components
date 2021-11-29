@@ -3,6 +3,9 @@ import React from "react";
 import { fireEvent } from "@testing-library/react";
 import { customRender } from "utils/customRender";
 
+// Accessibility
+import { axe, toHaveNoViolations } from "jest-axe";
+
 // Elements
 import ListMenuElements from "molecules/ListMenuElements/ListMenuElements";
 
@@ -19,6 +22,7 @@ const defaultProps: ListMenuElementsProps = {
 };
 
 // Tests
+expect.extend(toHaveNoViolations);
 describe("ListMenuElements", () => {
 	beforeEach(() => {
 		window.matchMedia = (query) => ({
@@ -33,12 +37,13 @@ describe("ListMenuElements", () => {
 		});
 	});
 
-	it("Renders as expected in desktop", () => {
+	it("Renders as expected in desktop", async () => {
 		const { container } = customRender(<ListMenuElements {...defaultProps} />);
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 
-	it("Renders as expected in mobile", () => {
+	it("Renders as expected in mobile", async () => {
 		window.matchMedia = (query) => ({
 			matches: true,
 			media: query,
@@ -51,6 +56,7 @@ describe("ListMenuElements", () => {
 		});
 		const { container } = customRender(<ListMenuElements {...defaultProps} />);
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 
 	it("Calls onClick function", () => {

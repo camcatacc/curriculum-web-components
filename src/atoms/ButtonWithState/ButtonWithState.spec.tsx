@@ -2,6 +2,9 @@
 import React from "react";
 import { fireEvent } from "@testing-library/react";
 import { customRender } from "utils/customRender";
+
+// Accessibility
+import { axe, toHaveNoViolations } from "jest-axe";
 import "@testing-library/jest-dom/extend-expect";
 
 // Elements
@@ -21,9 +24,10 @@ const renderComponent = (props = {}) => {
 };
 
 describe("LoadingButton", () => {
-	it("Snapshot", () => {
+	it("Snapshot", async () => {
 		const { container } = renderComponent();
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 
 	it("Calls onClick when clicked", () => {
@@ -47,3 +51,4 @@ describe("LoadingButton", () => {
 	});
 });
 // Tests
+expect.extend(toHaveNoViolations);

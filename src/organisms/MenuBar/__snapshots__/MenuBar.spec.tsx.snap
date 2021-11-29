@@ -40,6 +40,7 @@ exports[`MenuBar Renders as expected if width > 720 1`] = `
           class="MuiIconButton-label"
         >
           <input
+            aria-label="Night Mode switch"
             class="PrivateSwitchBase-input-6 MuiSwitch-input"
             type="checkbox"
             value="nightMode"
@@ -100,6 +101,7 @@ exports[`MenuBar Renders as expected with dark mode 1`] = `
           class="MuiIconButton-label"
         >
           <input
+            aria-label="Night Mode switch"
             class="PrivateSwitchBase-input-12 MuiSwitch-input"
             type="checkbox"
             value="nightMode"

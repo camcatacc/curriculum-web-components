@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Bar Renders as expected 1`] = `
+exports[`Bar Renders as expected and has no accessibility violations 1`] = `
 <div>
   <div
     class="bg-gray-300 h-full"

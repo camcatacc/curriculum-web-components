@@ -2,6 +2,9 @@
 import React from "react";
 import { customRender } from "utils/customRender";
 
+// Accessibility
+import { axe, toHaveNoViolations } from "jest-axe";
+
 // Elements
 import GroupAbilities from "organisms/GroupAbilities/GroupAbilities";
 
@@ -28,10 +31,12 @@ const defaultProps: GroupAbilitiesProps = {
 };
 
 // Tests
+expect.extend(toHaveNoViolations);
 describe("GroupAbilities", () => {
-	it("Renders as expected", () => {
+	it("Renders as expected and has no accessibility violations", async () => {
 		const { container } = customRender(<GroupAbilities {...defaultProps} />);
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 	it("Renders as expected with motion", () => {
 		const { container } = customRender(<GroupAbilities {...defaultProps} animated={true} />);

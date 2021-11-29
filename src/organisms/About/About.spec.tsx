@@ -2,6 +2,9 @@
 import React from "react";
 import { customRender } from "utils/customRender";
 
+// Accessibility
+import { axe, toHaveNoViolations } from "jest-axe";
+
 // Elements
 import About from "organisms/About/About";
 
@@ -20,10 +23,12 @@ const defaultProps: AboutProps = {
 };
 
 // Tests
+expect.extend(toHaveNoViolations);
 describe("About", () => {
-	it("Renders as expected", () => {
+	it("Renders as expected and has no accessibility violations", async () => {
 		const { container } = customRender(<About {...defaultProps} />);
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 
 	it("Renders as expected when animated", () => {

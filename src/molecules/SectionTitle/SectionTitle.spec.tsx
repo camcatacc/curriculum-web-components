@@ -2,6 +2,9 @@
 import React from "react";
 import { customRender } from "utils/customRender";
 
+// Accessibility
+import { axe, toHaveNoViolations } from "jest-axe";
+
 // Elements
 import SectionTitle from "molecules/SectionTitle/SectionTitle";
 
@@ -14,9 +17,11 @@ const defaultProps: SectionTitleProps = {
 };
 
 // Tests
+expect.extend(toHaveNoViolations);
 describe("SectionTitle", () => {
-	it("Renders as expected", () => {
+	it("Renders as expected and has no accessibility violations", async () => {
 		const { container } = customRender(<SectionTitle {...defaultProps} />);
 		expect(container).toMatchSnapshot();
+		expect(await axe(container)).toHaveNoViolations();
 	});
 });

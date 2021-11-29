@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AvatarWithName Renders as expected 1`] = `
+exports[`AvatarWithName Renders as expected and has no accessibility violations 1`] = `
 <div>
   <div
     class="sc-gsDKAQ mtNEY w-full relative mb-4"
@@ -8,6 +8,7 @@ exports[`AvatarWithName Renders as expected 1`] = `
     <img
       alt="DavidCamacho Cateura"
       class="absolute top-0 left-0 bottom-0 right-0 rounded-full"
+      src="avatar.jpg"
     />
   </div>
   <h3
