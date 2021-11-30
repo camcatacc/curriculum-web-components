@@ -13,7 +13,7 @@ import type { ParagraphProps } from "atoms/Paragraph/Paragraph";
 
 // Default props
 const defaultProps: ParagraphProps = {
-	children: <p>Bu</p>
+	children: "Bu"
 };
 
 // Tests

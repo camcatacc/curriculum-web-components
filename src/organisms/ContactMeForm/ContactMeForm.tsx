@@ -2,7 +2,7 @@
 import React from "react";
 
 // Elements
-import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, TextField, Typography } from "@material-ui/core";
+import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, TextField, Typography, TextFieldProps } from "@material-ui/core";
 import ButtonWithState from "atoms/ButtonWithState/ButtonWithState";
 
 // Styles
@@ -34,28 +34,34 @@ export interface ContactMeFormProps {
 	error?: string;
 }
 
+const commonProps: TextFieldProps = {
+	inputProps: { style: { fontSize: "1rem" } },
+	InputLabelProps: { style: { fontSize: "1rem" } },
+	variant: "outlined"
+};
+
 // Components
 const ContactMeForm = ({ openModal, handleModalClose, form, onFormChange, onButtonClick, loading, error }: ContactMeFormProps) => (
 	<Dialog open={openModal} onClose={handleModalClose} fullWidth>
-		<DialogTitle>
+		<DialogTitle disableTypography>
 			<Typography variant="h2" align="center">
 				CONTACT ME
 			</Typography>
 		</DialogTitle>
 		<DialogContent>
-			<DialogContentText variant="body1" align="center">
+			<DialogContentText variant="body2" align="center">
 				I will be glad to help ;)
 			</DialogContentText>
 			<div className="flex flex-col gap-3 mt-6">
-				<TextField id="name" onChange={(ev) => onFormChange("name", ev.target.value)} value={form.name} variant="outlined" label="Name" />
-				<TextField id="surname" onChange={(ev) => onFormChange("surname", ev.target.value)} value={form.surname} variant="outlined" label="Surname" />
-				<TextField id="email" onChange={(ev) => onFormChange("email", ev.target.value)} value={form.email} variant="outlined" label="Email" />
-				<TextField id="messageSubject" onChange={(ev) => onFormChange("messageSubject", ev.target.value)} value={form.messageSubject} variant="outlined" label="Message Subject" />
+				<TextField {...commonProps} id="name" onChange={(ev) => onFormChange("name", ev.target.value)} value={form.name} label="Name" />
+				<TextField {...commonProps} id="surname" onChange={(ev) => onFormChange("surname", ev.target.value)} value={form.surname} label="Surname" />
+				<TextField {...commonProps} id="email" onChange={(ev) => onFormChange("email", ev.target.value)} value={form.email} label="Email" />
+				<TextField {...commonProps} id="messageSubject" onChange={(ev) => onFormChange("messageSubject", ev.target.value)} value={form.messageSubject} label="Message Subject" />
 				<TextField
+					{...commonProps}
 					id="messageBody"
 					onChange={(ev) => onFormChange("messageBody", ev.target.value)}
 					value={form.messageBody}
-					variant="outlined"
 					rows={5}
 					multiline
 					label="Message Body"

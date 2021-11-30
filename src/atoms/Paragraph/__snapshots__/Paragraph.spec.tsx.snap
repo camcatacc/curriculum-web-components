@@ -5,9 +5,7 @@ exports[`Paragraph Renders as expected and has no accessibility violations 1`] =
   <p
     class="MuiTypography-root sc-bdvvtL gedMyf MuiTypography-body1 MuiTypography-alignJustify"
   >
-    <p>
-      Bu
-    </p>
+    Bu
   </p>
 </div>
 `;
