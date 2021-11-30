@@ -1,6 +1,6 @@
 {
 	"name": "@camcatacc/curriculum-web-components",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"private": false,
 	"peerDependencies": {
 		"@craco/craco": "^6.4.2",
@@ -19,16 +19,16 @@
 		"web-vitals": "^1.0.1"
 	},
 	"scripts": {
-		"test": "craco test --no-watch --watch=false --watchAll=false --no-watchman --runInBand",
-		"test:dev": "craco test",
-		"test:coverage": "yarn test --coverage && coverage/lcov-report/index.html",
-		"test:open-coverage": "coverage/lcov-report/index.html",
-		"build:cleanup": "rimraf -rf dist types",
-		"release": " yarn build:rollup && npm publish && yarn build:cleanup",
-		"eject": "react-scripts eject",
-		"storybook": "start-storybook -p 6006 -s public",
 		"build-storybook": "build-storybook -s public",
-		"build:rollup": "yarn rollup -c"
+		"build:cleanup": "rimraf -rf dist types",
+		"build:rollup": "yarn rollup -c",
+		"eject": "react-scripts eject",
+		"release": " yarn build:rollup && npm publish && yarn build:cleanup",
+		"storybook": "start-storybook -p 6006 -s public",
+		"test": "craco test --no-watch --watch=false --watchAll=false --no-watchman --runInBand",
+		"test:coverage": "yarn test --coverage && coverage/lcov-report/index.html",
+		"test:dev": "craco test",
+		"test:open-coverage": "coverage/lcov-report/index.html"
 	},
 	"eslintConfig": {
 		"extends": [
