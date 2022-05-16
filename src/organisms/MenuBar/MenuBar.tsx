@@ -12,7 +12,7 @@ import * as Styled from "organisms/MenuBar/MenuBar.styled";
 export interface MenuBarProps {
 	elements: { name: string; id: string; onClick?: () => void }[];
 	selectedId: string;
-	onSwitchChange: (checked: boolean) => void;
+	onSwitchChange?: (checked: boolean) => void;
 	darkModeChecked: boolean;
 }
 
@@ -20,12 +20,12 @@ export interface MenuBarProps {
 const MenuBar = ({ elements, selectedId, onSwitchChange, darkModeChecked }: MenuBarProps) => {
 	const ref = useRef<HTMLDivElement>(null);
 
-	const onChange = (ev: React.ChangeEvent<HTMLInputElement>) => onSwitchChange(ev.target.checked);
+	const onChange = (ev: React.ChangeEvent<HTMLInputElement>) => onSwitchChange && onSwitchChange(ev.target.checked);
 
 	return (
 		<Styled.Container ref={ref} secondary={secondary} className="w-full sticky top-0 flex justify-center pt-2 pb-2 z-50">
 			<ListMenuElements menuElements={elements} selectedId={selectedId} className="w-4/5 max-w-screen-lg items-center" />
-			<Styled.MaterialUISwitch checked={darkModeChecked} onChange={onChange} value="nightMode" inputProps={{ "aria-label": "Night Mode switch" }} />
+			{onSwitchChange && <Styled.MaterialUISwitch checked={darkModeChecked} onChange={onChange} value="nightMode" inputProps={{ "aria-label": "Night Mode switch" }} />}
 		</Styled.Container>
 	);
 };

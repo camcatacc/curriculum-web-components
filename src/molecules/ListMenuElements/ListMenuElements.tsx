@@ -36,7 +36,7 @@ const ListMenuElements = ({ menuElements, selectedId, className }: ListMenuEleme
 		setIsMobile(media.matches);
 
 		/* istanbul ignore next */
-		const listener = (e: MediaQueryListEvent) => isMobile !== e.matches && setIsMobile(e.matches);
+		const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
 		media.addEventListener("change", listener);
 
 		return () => {
